@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Devuelve una variable tipo array NxM donde:
+%%  -N = Cantidad de ventanas creadas
+%%  -M = Cantidad de elementos por ventana
+%% La función tiene como parametros:
+%%  - audioarray = Array con elementos de audioarray
+%%  - win_len = Cantidad de elementos por ventana
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function ventanas = windows(audioarray,win_len)
   printf("Inicia proceso de enventanado\n");
   len_audiofile = length(audioarray);
