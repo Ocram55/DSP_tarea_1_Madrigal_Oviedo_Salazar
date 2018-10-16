@@ -2,7 +2,8 @@
 
 % yn= vectores de muestra quew vienen de la respuesta al impulso
 % L= largo del que deberia ser la muestra original
-   function combinacion (yn,L)
+
+   function y = combinacion (yn,L)
    M= length yn;  % M= largo de la muestra x(n)
    y = zeros(1, L+M-1); % mi salida total
   
