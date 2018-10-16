@@ -7,8 +7,6 @@
 %out=señal de salida Rcc
 
 function out = RCC(vk, L, d0, d1, len_msg)
-
-
 N = floor(length(vk)/L);                    %numero de ventanas
 vk_dividido = reshape(vk(1:N*L,1), L, N);   %division de vk en el numero de ventanas
 data = char.empty(N, 0);
@@ -21,6 +19,10 @@ for k=1:N
         data(k) = '1';
 	end
 end
+
+m   = floor(N/8);
+bin = reshape(data(1:8*m), 8, m)';   %Retrieved in binary
+out = char(bin2dec(bin))';           %bin=>char
 
 if (len_msg~=0) % esto es por si no hay mensaje oculto
 	out = out(1:len_msg);
