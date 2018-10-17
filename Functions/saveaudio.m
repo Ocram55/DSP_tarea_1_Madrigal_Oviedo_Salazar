@@ -2,11 +2,8 @@
 %Salvando audio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function saveaudio(audioarray,fs)
-  gtk_window_set_transient_for();
-  printf("Seleccione un archivo de audio forma *.wav\n");
+  printf("Seleccione la carpeta donde desea guardar su archivo *.wav codificado \n");
   fpath=uigetdir("Salvar Audio");
-  printf(fpath)
-
-  %audiowrite(audioarray,fs);
-  
+  file=[fpath "/audio_output.wav"];
+  audiowrite(file,audioarray,fs);
 endfunction
