@@ -1,12 +1,12 @@
-function out = Kernel(inVec, bit)
-  amp_0 = 0.75;
-  delay_0 = 10;
+function out = Kernel(inVec, bit, amp_0, amp_1, delay_0, delay_1)
+  #amp_0 = 0.75;
+  #delay_0 = 10;
   kernel_0 = zeros(1,delay_0);
   kernel_0(1,1) = 1;
   kernel_0(1,end) = amp_0;
 
-  amp_1 = 0.5;
-  delay_1 = 15;
+  #amp_1 = 0.5;
+  #delay_1 = 15;
   kernel_1 = zeros(1,delay_1);
   kernel_1(1,1) = 1;
   kernel_1(1,end) = amp_1;
