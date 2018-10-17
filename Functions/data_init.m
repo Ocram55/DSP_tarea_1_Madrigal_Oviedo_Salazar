@@ -28,19 +28,25 @@ function [audioarray,fs,metadatos,delta,retardo0,retardo1,win_len]=data_init()
   if(length(productor) == 0) productor = ["!"]; endif
   metadatos=[title "*" singer "*" autor "*" album "*" year "*" guestsinger "*" productor];
   %%Solicitud de parametros para codificacion
-  delta = input("Determine el valor de la amplitud del eco: ");
+  delta0 = input("Determine el valor de la amplitud del eco para los bit 0: ");
   retardo0 = input("Determine el retardo en micro segundos para el valor de bit 0: ")*1e-6;
+  delta1 = input("Determine el valor de la amplitud del eco para los bit 1: ");
   retardo1 = input("Determine el retardo en micro segundos para el valor de bit 1: ")*1e-6;
   win_optv = win_opt(audioarray,metadatos,fs);
-  printf("El valor recomendado de tiempo por ventana es %f us.\n",win_optv);
+  printf("El valor recomendado maximo de tiempo por ventana es %f us.\n",win_optv);
   win_len = input("Determine el tiempo por la ventana en micro segundos: ")*1e-6;
   if(win_len > win_optv)
     error("El tiempo asignado por ventana no permite almacenar todos los metadatos");
   endif
+  if(length(delta0) == 0) delta0 = ; endif
+  if(length(delta1) == 0) delta1 = ; endif
+  if(length(retardo0) == 0) retardo0 = ; endif
+  if(length(retardo1) == 0) retardo1 = ; endif
+  if(length(win_len) == 0) win_len = ; endif
 endfunction
 
 function win_optv = win_opt(audioarray,metadatos,fs)
   len_metadatos = length(metadatos);
   len_audioarray = length(audioarray);
-  win_optv = ((len_audioarray*(1/fs))/(len_metadatos*8))1e6;
+  win_optv = ((len_audioarray*(1/fs))/(len_metadatos*8))*1e6;
 endfunction
