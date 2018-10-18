@@ -1,17 +1,15 @@
 %combinacion
 
-% yn= vectores de muestra quew vienen de la respuesta al impulso
-% L= largo del que deberia ser la muestra original
+% matrizIn = matriz con los vectores de salida de los kernel
+% L = largo de la muestra original
 
-   function y = combinacion (yn,L)
-   M= length yn;  % M= largo de la muestra x(n)
-   y = zeros(1, L+M-1); % mi salida total
+function y = combinacion (matrizIn,L)
+  [mFilas, mCols] = size(matrizIn);
+  y = zeros(1, mFilas*mCols);
   
-  for i = 1: L :M ;  %(M: ultimo objeto dentro de x[n])     
-        tail= y(L+1:L+M-1);
-        if (i==1)
-            y(1:L-1) = y(1:L-1);   
-        else
-            y(1:L-1) = y(1:L-1) + tail; %(add the overlapped output blocks)
-   end
+  y(1,1:mCols) = matrizIn(1,:);
+  for i = 1:(mFilas-1)
+    y(1,(i*L)+1) = matrizIn(i+1,:);
+  endfor
+endfunction
   
