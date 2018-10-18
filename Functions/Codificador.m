@@ -29,7 +29,9 @@ for i = 1:mFilas
   for j = 1:mCols
     % - codigo - %
     if (vIndx <= vFilas)
-      matrizResultados(vIndx,:) = Kernel(matrizVentanas(vIndx,:), metadatosBinario(i,j), delta0, delta1, retardo0, retardo1);
+      matrizResultados(vIndx,:) = Kernel(matrizVentanas(vIndx,:), str2num(metadatosBinario(i,j)), delta0, delta1, retardo0, retardo1);
+      %prueba = str2num(metadatosBinario(i,j));
+      %disp(prueba);
       ++vIndx;
     endif
   endfor
@@ -41,3 +43,5 @@ audioOutput = combinacion(matrizResultados, vCols);
 % ------------ Escritura de Audio ------------- %
 saveaudio(audioOutput, Fs);
 
+% ---------- Escritura de Parametros ---------- %
+save params.txt largoVentana
