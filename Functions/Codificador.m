@@ -21,10 +21,11 @@ metadatosBinario = dec2bin(metadatosBinario);
 [mFilas, mCols] = size(metadatosBinario);
 [vFilas, vCols] = size(matrizVentanas);
 
-vIndx = 1;
-matrizResultados = [];
-
 % ----------- Multiplexado y kernel ----------- %
+vIndx = 1;
+largoMax = max(retardo0, retardo1);
+matrizResultados = zeros(vFilas, largoMax + largoVentana - 1);
+
 for i = 1:mFilas
   for j = 1:mCols
     % - codigo - %
@@ -44,4 +45,4 @@ audioOutput = combinacion(matrizResultados, vCols);
 saveaudio(audioOutput, Fs);
 
 % ---------- Escritura de Parametros ---------- %
-save params.txt largoVentana
+save params.txt largoVentana retardo0 retardo1 mFilas mCols

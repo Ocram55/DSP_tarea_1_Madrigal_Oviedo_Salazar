@@ -7,6 +7,10 @@
 
 % --------------- Leer Parametros --------------- %
 largoVentana = load("params.txt").("largoVentana");
+delayA = load("params.txt").("retardo0");
+delayB = load("params.txt").("retardo1");
+mFilas = load("params.txt").("mFilas");
+mCols  = load("params.txt").("mCols");
 
 % ----------------- Leer Audio ------------------ %
 printf("\n----------------------------------------------------------------\n");
@@ -28,5 +32,17 @@ for i = 1:vFilas
   matrizRCC(i,:) = cepstro(matrizVentanas(i,:));
 endfor
 
+% ---------------- Clasificador ----------------- %
+clasificadorOut = zeros(1, vFilas);
 
+for j = 1:vFilas
+  clasificadorOut(1, j) = Clasificador(matrizRCC(j, :), delayA, delayB);
+endfor
 
+% ----------------- Interprete ------------------ %
+charIndx = floor(vFilas/mCols);
+metadatosDeco = "";
+
+for k = 1:charIndx
+  metadatosDeco = strcat(metadatosDeco, Interprete(clasificadorOut(1,(k-1)*mCols+1:(k-1)*mCols+mCols)));
+endfor

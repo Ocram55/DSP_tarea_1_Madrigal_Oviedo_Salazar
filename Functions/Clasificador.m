@@ -1,4 +1,4 @@
-function bitOut = clasificador(inCepstro, dA, dB)
+function bitOut = Clasificador(inCepstro, dA, dB)
   # Los retrasos dA (para el 0) y dB (para el 1)
   # estan dados en muestras. dB siempre es mayor
   # a dA.
@@ -15,7 +15,7 @@ function bitOut = clasificador(inCepstro, dA, dB)
     bitOut = 0;
   elseif (peakA < peakB)
     bitOut = 1;
-  else
-    error ("Valor de bit invalido!");
+  else 
+    bitOut = 1;
   endif
 endfunction
