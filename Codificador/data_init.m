@@ -27,7 +27,7 @@ function [audioarray,fs,audio,channel,fpath_out,metadatos,delta0,delta1,retardo0
   [audio,fs] = audioread(audiofile);
   printf("Seleccione el canal a codificar presionando\n** 1 para Canal Izquierdo\n** 2 para Canal derecho\n");
   printf("En el caso de presionar ENTER se definira por defecto Canal Izquierdo\n");
-  channel = input("Seleccione el canal a codificar : ",'s');
+  channel = input("Seleccione el canal a codificar : ");
   if(channel != 1 && channel != 2)
     error("***** Canal incorrecto *****");
   endif
