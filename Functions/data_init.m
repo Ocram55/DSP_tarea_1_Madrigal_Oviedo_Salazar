@@ -6,6 +6,7 @@ function [audioarray,fs,metadatos,delta0,delta1,retardo0,retardo1,win_len]=data_
   printf("Seleccione un archivo de audio forma *.wav\n");
   printf("----------------------------------------------------------------\n \n");
   [fname,fpath]=uigetfile({"*.wav"},"AudioLoad");
+  printf(fpath);
   audiofile = [fpath fname];
   [audioarray,fs] = audioread(audiofile);
   %%Solicitud de archivo con metadatos
