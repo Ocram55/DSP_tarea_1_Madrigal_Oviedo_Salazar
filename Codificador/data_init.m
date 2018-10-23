@@ -102,7 +102,7 @@ function [audioarray,fs,audio,channel,fpath_out,metadatos,delta0,delta1,retardo0
   if(length(delta1) == 0) delta1 = 0.5; endif
   if(length(retardo0) == 0) retardo0 =round(46e-6*fs) ; endif
   if(length(retardo1) == 0) retardo1 = round(91e-6*fs); endif
-  if(length(win_len) == 0) win_len = round(win_optv/4)*fs ; endif
+  if(length(win_len) == 0) win_len = round((win_optv/4)*fs) ; endif
 endfunction
 
 function win_optv = win_opt(audioarray,metadatos,fs)

@@ -19,7 +19,7 @@ printf("\n----------------------------------------------------------------\n");
 printf("***** Inicia proceso de conversion de metadatos *****\n");
 printf("----------------------------------------------------------------\n \n");
 metadatosBinario = toascii(metadatos);
-metadatosBinario = dec2bin(metadatosBinario);
+metadatosBinario = dec2bin(metadatosBinario,8);
 
 % Obtiene el tamaño de la matriz de metadatos
 [mFilas, mCols] = size(metadatosBinario);
