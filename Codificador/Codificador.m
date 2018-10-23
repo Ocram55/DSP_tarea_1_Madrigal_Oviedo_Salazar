@@ -40,8 +40,12 @@ for i = 1:mFilas
       matrizResultados(vIndx,:) = Kernel(matrizVentanas(vIndx,:), str2num(metadatosBinario(i,j)), delta0, delta1, retardo0, retardo1);
       %prueba = str2num(metadatosBinario(i,j));
       %disp(prueba);
-      ++vIndx;
-    endif
+    %elseif(vIndx > vFilas && vIndx<= vFilas)
+    %  temp1 = length(matrizVentanas(vIndx,:));
+    %  matrizResultados(vIndx,1:temp1) = matrizVentanas(vIndx,:);
+    %  matrizResultados(vIndx,temp1+1:largoMax + largoVentana - 1) = 0;
+    %endif 
+    ++vIndx;
   endfor
 endfor
 

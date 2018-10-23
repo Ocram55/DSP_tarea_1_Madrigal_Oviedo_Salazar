@@ -16,7 +16,7 @@ function y = combinacion (matrizIn,L)
   
   y(1,1:mCols) = matrizIn(1,1:mCols);
   for i = 1:(mFilas-1)
-    y(1,(i*L)+1:(i*L)+mCols) = matrizIn(i+1,:);
+    y(1,(i*L)+1:(i*L)+mCols) = matrizIn(i+1,:) + y(1,(i*L)+1:(i*L)+mCols);
   endfor
   
 endfunction
