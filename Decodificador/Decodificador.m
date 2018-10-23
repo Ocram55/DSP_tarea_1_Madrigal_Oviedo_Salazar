@@ -48,4 +48,4 @@ for k = 1:charIndx
   metadatosDeco = strcat(metadatosDeco, Interprete(clasificadorOut(1,(k-1)*mCols+1:(k-1)*mCols+mCols)));
 endfor
 
-printf(metadatosDeco);
+%printf(metadatosDeco);

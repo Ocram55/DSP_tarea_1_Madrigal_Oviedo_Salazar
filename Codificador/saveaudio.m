@@ -4,6 +4,6 @@
 % y la frecuencia de muestreo original de la cancion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function saveaudio(audioarray,fs,fpath)
-  file=[fpath "audio_output.wav"];
+  file=[fpath "out.wav"];
   audiowrite(file,audioarray,fs);
 endfunction
