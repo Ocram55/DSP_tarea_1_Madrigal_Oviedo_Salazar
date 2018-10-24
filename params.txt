@@ -1,0 +1,8 @@
+# Created by Octave 4.4.1, Wed Oct 24 02:17:26 2018 CST <diego@diegoss>
+# name: metadatos
+# type: sq_string
+# elements: 1
+# length: 35
+@Murder_One*Metallica*!*!*2017*!*!@
+
+

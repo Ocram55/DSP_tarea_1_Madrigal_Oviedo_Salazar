@@ -69,7 +69,7 @@ function [audioarray,fs,audio,channel,fpath_out,metadatos,delta0,delta1,retardo0
   if(length(guestsinger) == 0) guestsinger = ["!"]; endif
   if(length(productor) == 0) productor = ["!"]; endif
   
-  metadatos=["@@" title "*" singer "*" autor "*" album "*" year "*" guestsinger "*" productor "@@"];
+  metadatos=["@" title "*" singer "*" autor "*" album "*" year "*" guestsinger "*" productor "@"];
   
   %%Solicitud de parametros para codificacion
   printf("\n----------------------------------------------------------------\n");

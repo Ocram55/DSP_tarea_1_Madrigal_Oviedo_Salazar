@@ -74,4 +74,4 @@ printf("***** FINALIZO CODIFICACION DE AUDIO *****\n");
 printf("----------------------------------------------------------------\n \n");
 
 % ---------- Escritura de Parametros ---------- %
-%save params.txt largoVentana retardo0 retardo1 mFilas mCols
+save ../params.txt metadatos

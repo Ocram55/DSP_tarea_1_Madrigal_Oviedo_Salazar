@@ -48,4 +48,32 @@ for k = 1:charIndx
   metadatosDeco = strcat(metadatosDeco, Interprete(clasificadorOut(1,(k-1)*mCols+1:(k-1)*mCols+mCols)));
 endfor
 
-%printf(metadatosDeco);
+printf("\n----------------------------------------------------------------\n");
+printf("Metadatos recuperados\n");
+printf("----------------------------------------------------------------\n \n");
+metadatos_recuperados = print_metadatos(metadatosDeco);
+
+printf("\n----------------------------------------------------------------\n");
+printf("***** FIN DE DECODIFICACION *****\n");
+printf("----------------------------------------------------------------\n \n");
+
+error_cal = input("Si quiere obtener el procentaje de error respecto a los metadatos originales presione alguna letra, de lo contrario precione ENTER : ",'s');
+if(length(error_cal) == 0)
+  printf("Fin de programa\n");
+else
+  metadatos_original = load("../params.txt").("metadatos");
+  metadatos_B_o =  toascii(metadatos_original);
+  metadatos_B_o =  dec2bin(metadatos_B_o,8);
+  metadatos_B_r = toascii(metadatos_recuperados);
+  metadatos_B_r =  dec2bin(metadatos_B_r,8);
+  min_v = min(length(metadatos_B_r),length(metadatos_B_o));
+  cont = 0;
+  for i = 1:min_v
+    for j = 1:8
+      if(metadatos_B_r(i,j) != metadatos_B_o(i,j)) 
+        ++cont;
+      endif  
+    endfor
+  endfor
+  printf("El porcentaje de error es %f\n",cont/min_v);
+endif
