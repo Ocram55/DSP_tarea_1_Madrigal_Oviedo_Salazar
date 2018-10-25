@@ -1,8 +1,8 @@
-# Created by Octave 4.4.1, Wed Oct 24 18:29:53 2018 CST <diego@diegoss>
+# Created by Octave 4.4.1, Wed Oct 24 19:21:15 2018 CST <diego@diegoss>
 # name: metadatos
 # type: sq_string
 # elements: 1
-# length: 44
-@aa*aa*aa*aa*aa*eeeeeeeeee*rrrrrrrrrrrrrrrr@
+# length: 29
+@Paradise*Coldplay*!*!*!*!*!@
 
 

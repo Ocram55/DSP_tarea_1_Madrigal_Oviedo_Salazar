@@ -99,9 +99,9 @@ function [audioarray,fs,audio, channel,fpath_out,metadatos,delta0,delta1,retardo
   if(win_len/fs > win_optv)
     error("El tiempo asignado por ventana no permite almacenar todos los metadatos");
   endif
-  if(length(delta0) == 0) delta0 =0.8; else  delta0 =1 - delta0; endif
-  if(length(delta1) == 0) delta1 = 0.8;  else  delta1 =1 - delta1; endif
-  if(length(retardo0) == 0) retardo0 =round(2000*1e-6*fs) ; endif
+  if(length(delta0) == 0) delta0 =0.7; else  delta0 =1 - delta0; endif
+  if(length(delta1) == 0) delta1 = 0.6;  else  delta1 =1 - delta1; endif
+  if(length(retardo0) == 0) retardo0 =round(1000*1e-6*fs) ; endif
   if(length(retardo1) == 0) retardo1 = round(3500*1e-6*fs); endif
   if(length(win_len) == 0) win_len = round(14000*1e-6*fs) ; endif
 endfunction

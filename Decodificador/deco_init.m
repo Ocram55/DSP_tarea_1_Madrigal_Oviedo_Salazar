@@ -55,7 +55,7 @@ function [audioarray, fs, retardo0, retardo1, win_len]=deco_init()
   if(retardo1 == 0) 
     error("***** Retardo no valido *****");
   endif
-  if(length(retardo0) == 0) retardo0 =round(2000*1e-6*fs) ; endif
+  if(length(retardo0) == 0) retardo0 =round(1000*1e-6*fs) ; endif
   if(length(retardo1) == 0) retardo1 = round(3500*1e-6*fs); endif
   win_len = round((input("Determine el tiempo por la ventana en micro segundos: ")*1e-6)*fs);
   if(win_len == 0) 
