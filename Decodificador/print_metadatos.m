@@ -56,7 +56,7 @@ function metadatos_recuperados = print_metadatos(metadatos)
   printf("El nombre del autor es: %s\n",autor);
   printf("El nombre del album es: %s\n",album);
   printf("El año de publicacion es: %s\n",year);
-  printf("Los caantantes invitados son: %s\n",guestsinger);
+  printf("Los cantantes invitados son: %s\n",guestsinger);
   printf("El productor es: %s\n",productor);
   metadatos_recuperados = metadatos(arrobas(1):arrobas(2));
 endfunction

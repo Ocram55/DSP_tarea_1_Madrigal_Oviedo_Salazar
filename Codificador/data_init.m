@@ -46,13 +46,13 @@ function [audioarray,fs,audio, channel,fpath_out,metadatos,delta0,delta1,retardo
   printf("\n----------------------------------------------------------------\n");
   printf("***** Directorio de salida de audio codificado *****\n");
   printf("----------------------------------------------------------------\n \n");
-  fpath_out = input("Si escribe ENTER se guardara en el directorio actual. \nEscriba el path donde guardar la cancion de la forma /it/is/the/:",'s');
+  fpath_out = input("Si escribe ENTER se guardara en el directorio actual. \nEscriba el path donde guardar la cancion de la forma /it/is/the/ : ",'s');
   
   %%-------- Metadatos-----------%%
   printf("\n----------------------------------------------------------------\n");
   printf("***** Metadatos de la cancion *****\nSi desea dejar algun espacio sin llenar solo presione ENTER.\nSi deja todos los espacios en blanco no se iniciara codificacion.\n");
   printf("----------------------------------------------------------------\n \n");
-  title = input("Escriba el nombre de la cancion:",'s');
+  title = input("Escriba el nombre de la cancion: ",'s');
   singer = input("Escriba el nombre del artista principal de la cancion: ",'s');
   autor = input("Escriba el nombre del autor de la cancion: ",'s');
   album = input("Escriba el nombre del album al que pertenece la cancion: ",'s');
