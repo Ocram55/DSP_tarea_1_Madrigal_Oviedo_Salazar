@@ -10,7 +10,7 @@
 % - retardo1 = Cantidad de muestras de retardo eco del bit 1
 % - win_len = Cantidad de muestras por ventana
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [audioarray,fs,audio,channel,fpath_out,metadatos,delta0,delta1,retardo0,retardo1, win_len]=data_init()
+function [audioarray,fs,audio, channel,fpath_out,metadatos,delta0,delta1,retardo0,retardo1, win_len]=data_init()
   printf("\n----------------------------------------------------------------\n");
   printf("***** Codificador de audio con el metodo Echo Hiding *****\n\n");
   printf("- Primero sera necesario introducir los directorios del archivo de audio de entrada y el de salida.\n");
@@ -25,6 +25,7 @@ function [audioarray,fs,audio,channel,fpath_out,metadatos,delta0,delta1,retardo0
   printf("----------------------------------------------------------------\n \n");
   audiofile = input("Escriba el path de la cancion de la forma /it/is/the/file.wav : ",'s');
   [audio,fs] = audioread(audiofile);
+  %info = audioinfo(audiofile);
   printf("Seleccione el canal a codificar presionando\n** 1 para Canal Izquierdo\n** 2 para Canal derecho\n");
   printf("En el caso de presionar ENTER se definira por defecto Canal Izquierdo\n");
   channel = input("Seleccione el canal a codificar : ");
@@ -98,11 +99,11 @@ function [audioarray,fs,audio,channel,fpath_out,metadatos,delta0,delta1,retardo0
   if(win_len/fs > win_optv)
     error("El tiempo asignado por ventana no permite almacenar todos los metadatos");
   endif
-  if(length(delta0) == 0) delta0 =0.5 ; endif
-  if(length(delta1) == 0) delta1 = 0.5; endif
-  if(length(retardo0) == 0) retardo0 =round(46e-6*fs) ; endif
-  if(length(retardo1) == 0) retardo1 = round(91e-6*fs); endif
-  if(length(win_len) == 0) win_len = round((win_optv/4)*fs) ; endif
+  if(length(delta0) == 0) delta0 =0.7; else  delta0 =1 - delta0; endif
+  if(length(delta1) == 0) delta1 = 0.7;  else  delta1 =1 - delta1; endif
+  if(length(retardo0) == 0) retardo0 =round(2000*1e-6*fs) ; endif
+  if(length(retardo1) == 0) retardo1 = round(3500*1e-6*fs); endif
+  if(length(win_len) == 0) win_len = round(14000*1e-6*fs) ; endif
 endfunction
 
 function win_optv = win_opt(audioarray,metadatos,fs)

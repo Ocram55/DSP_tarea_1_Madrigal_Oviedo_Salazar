@@ -7,7 +7,7 @@
 
 % --------------- Leer Parametros --------------- %
 clear;clc;
-[audioArray, fs, delta0, delta1, delayA, delayB, largoVentana]=deco_init();
+[audioArray, fs, delayA, delayB, largoVentana]=deco_init();
 mCols = 8;
 
 % ----------------- Enventenado ----------------- %
@@ -75,5 +75,5 @@ else
       endif  
     endfor
   endfor
-  printf("El porcentaje de error es %f\n",cont/min_v);
+  printf("El porcentaje de error es %f\n",(cont/(min_v*8))*100);
 endif
